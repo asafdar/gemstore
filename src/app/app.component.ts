@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'yo';
+  year = new Date().getFullYear();
+  sum = 4 + 2;
+  numbers = [1, 2, 3, 4, 5];
+  dog = { name: 'bill', isHungry: true};
 }
