@@ -1,11 +1,11 @@
 <h1>{{title | wave}}</h1>
-<app-home></app-home>
+<app-navbar [cart]="cart"></app-navbar>
+
+<div class="container">
+    <app-home [cart]="cart"></app-home>
+</div>
 
 <footer>
     <p>&copy; {{year}}</p>
-    <p>{{sum}}</p>
-    <p>{{1 + 2 + 3}}</p>
-    <p>{{numbers}}</p>
-    <p>{{dog}}</p>
-    <p>Is {{dog.name}} hungry? {{dog.isHungry}}</p>
 </footer>
+
