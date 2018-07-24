@@ -9,6 +9,7 @@ import { CartItemModel } from './cart-item-model';
 })
 export class AppComponent {
   title = 'Gemstore';
+  year = new Date().getFullYear();
   cart: CartModel = {
     totalprice: 0,
     totalquantity: 0,

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GemModel } from '../gem-model';
 import { CartModel } from '../cart-model';
 import { CartItemModel } from '../cart-item-model';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-gem',
@@ -10,19 +11,20 @@ import { CartItemModel } from '../cart-item-model';
 })
 export class GemComponent implements OnInit {
 
-    @Input()
     cart: CartModel;
 
     @Input()
     gem: GemModel;
 
-  constructor() { }
-  ngOnInit() {  }
+  constructor(private cartService: CartService) { }
+  ngOnInit() {
+      this.cart = this.cartService.cart;
+  }
   addToCart() {
       this.gem.inventory = this.gem.inventory - 1;
-      if(this.gem.inventory <= 0){
-          this.gem.name = this.gem.name + '[SOLD OUT]';
-      }
+//      if(this.gem.inventory <= 0){
+//          this.gem.name = this.gem.name + '[SOLD OUT]';
+//      }
 
       let existingItem: CartItemModel;
 		existingItem = this.cart.items.find(x => x.gemid == this.gem.id);

@@ -1,0 +1,29 @@
+<p>
+  There are {{cart.totalquantity}} things in your cart
+</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cartitem of cart.items">
+      <th scope="row">{{cartitem.name}}</th>
+      <td>{{cartitem.quantity}}</td>
+      <td>{{cartitem.unitprice | currency}}</td>
+      <td>{{cartitem.unitprice * cartitem.quantity | currency}}</td>
+    </tr>
+    <tr>
+        <th scope ="row">Total Price</th>
+        <td></td>
+        <td></td>
+        <td>{{cart.totalprice | currency}}</td>
+    </tr>
+
+  </tbody>
+</table>

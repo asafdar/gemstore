@@ -1,8 +1,8 @@
 <h1>{{title | wave}}</h1>
-<app-navbar [cart]="cart"></app-navbar>
+<app-navbar></app-navbar>
 
 <div class="container">
-    <app-home [cart]="cart"></app-home>
+    <router-outlet></router-outlet>
 </div>
 
 <footer>
